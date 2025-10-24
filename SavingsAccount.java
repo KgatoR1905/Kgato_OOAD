@@ -1,3 +1,5 @@
+package com.oakridge.financial;
+
 public class SavingsAccount extends Account {
     private static final double MIN_BALANCE = 0.0;
 
