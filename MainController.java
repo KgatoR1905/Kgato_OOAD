@@ -26,26 +26,34 @@ public class MainController {
     @FXML
     private void handleLoginButtonAction(ActionEvent event) {
         System.out.println("Login button clicked! Loading Login Screen.");
-        
-        try {
-            Node source = (Node) event.getSource();
-            Stage currentStage = (Stage) source.getScene().getWindow();
-            
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginScreen.fxml"));
-            Parent loginRoot = loader.load();
-            
-            currentStage.setScene(new Scene(loginRoot));
-            currentStage.setTitle("Oakridge Financial - User Login");
-            currentStage.show();
-
-        } catch (IOException e) {
-            System.err.println("Error loading LoginScreen.fxml: " + e.getMessage());
-            e.printStackTrace();
-        }
+        loadNewScene(event, "LoginScreen.fxml", "Oakridge Financial - User Login");
     }
 
     @FXML
     private void handleCreateAccountButtonAction(ActionEvent event) {
-        System.out.println("Create Account button clicked!");
+        System.out.println("Create Account button clicked! Loading Registration Screen.");
+        loadNewScene(event, "NewAccountScreen.fxml", "Oakridge Financial - Register New Account");
+    }
+    
+    
+    private void loadNewScene(ActionEvent event, String fxmlPath, String title) {
+        try {
+            
+            Node source = (Node) event.getSource();
+            Stage currentStage = (Stage) source.getScene().getWindow();
+            
+           
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Parent root = loader.load();
+            
+           
+            currentStage.setScene(new Scene(root));
+            currentStage.setTitle(title);
+            currentStage.show();
+
+        } catch (IOException e) {
+            System.err.println("Error loading FXML file: " + fxmlPath + ". Check file path and existence.");
+            e.printStackTrace();
+        }
     }
 }
