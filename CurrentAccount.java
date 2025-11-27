@@ -1,5 +1,3 @@
-package com.oakridge.financial;
-
 public class CurrentAccount extends Account {
     private static final double OVERDRAFT_LIMIT = 0.0;
 

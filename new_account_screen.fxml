@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 
 <VBox alignment="TOP_CENTER" spacing="25.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.oakridge.financial.NewAccountController"
+       fx:controller="NewAccountController"
       style="-fx-background-color: #4D0017; -fx-padding: 60 40 40 40;"
       prefHeight="550.0" prefWidth="650.0">
 

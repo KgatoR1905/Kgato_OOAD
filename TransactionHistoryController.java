@@ -1,7 +1,6 @@
-
-
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TableColumn;
 import javafx.event.ActionEvent;
 import javafx.stage.Stage;
 import javafx.scene.Node;
@@ -10,43 +9,41 @@ import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
 import java.io.IOException;
 
-public class MainController {
+public class TransactionHistoryController {
 
     @FXML
-    private Button loginButton;
+    private TableView transactionTable;
 
     @FXML
-    private Button createAccountButton;
+    private TableColumn timestampColumn;
+
+    @FXML
+    private TableColumn typeColumn;
+
+    @FXML
+    private TableColumn amountColumn;
+
+    @FXML
+    private TableColumn balanceColumn;
 
     @FXML
     public void initialize() {
-        System.out.println("Main Menu Controller initialized.");
+        // populate the table if transaction data is available (left as future enhancement)
     }
 
     @FXML
-    private void handleLoginButtonAction(ActionEvent event) {
-        System.out.println("Login button clicked! Loading Login Screen.");
-        loadNewScene(event, "LoginScreen.fxml", "Oakridge Financial - User Login");
+    private void handleBackAction(ActionEvent event) {
+        loadNewScene(event, "dashboard.fxml", "Oakridge Financial - Dashboard");
     }
 
-    @FXML
-    private void handleCreateAccountButtonAction(ActionEvent event) {
-        System.out.println("Create Account button clicked! Loading Registration Screen.");
-        loadNewScene(event, "NewAccountScreen.fxml", "Oakridge Financial - Register New Account");
-    }
-    
-    
     private void loadNewScene(ActionEvent event, String fxmlPath, String title) {
         try {
-            
             Node source = (Node) event.getSource();
             Stage currentStage = (Stage) source.getScene().getWindow();
-            
-           
+
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent root = loader.load();
-            
-           
+
             currentStage.setScene(new Scene(root));
             currentStage.setTitle(title);
             currentStage.show();

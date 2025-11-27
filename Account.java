@@ -1,5 +1,3 @@
-package com.oakridge.financial;
-
 import java.util.List;
 import java.util.ArrayList;
 
@@ -46,3 +44,4 @@ public abstract class Account {
         return sb.toString();
     }
 }
+

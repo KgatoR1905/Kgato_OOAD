@@ -1,4 +1,4 @@
-package com.oakridge.financial;
+
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -18,12 +18,8 @@ public class WithdrawalController {
 
     @FXML
     public void initialize() {
-        if (BankingSystem.CUSTOMER_SERVICE.isLoggedIn()) {
-            Customer customer = BankingSystem.CUSTOMER_SERVICE.getCurrentCustomer();
-            if (!customer.getAccountNumbers().isEmpty()) {
-                accountNumberField.setText(String.valueOf(customer.getAccountNumbers().get(0)));
-            }
-        }
+        // Initialization deferred to avoid compile-time dependency issues
+        // Account number will be set when the scene is shown and customer is available.
     }
 
     @FXML

@@ -4,80 +4,50 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" spacing="25.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.oakridge.financial.WithdrawalController"
-      style="-fx-background-color: #4D0017; -fx-padding: 60 40 40 40;"
-      prefHeight="480.0" prefWidth="600.0">
+<VBox alignment="TOP_CENTER" prefHeight="480.0" prefWidth="600.0" spacing="25.0" style="-fx-background-color: #4D0017; -fx-padding: 60 40 40 40;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WithdrawalController">
 
     <VBox alignment="CENTER" spacing="5.0">
-        <Label text="Cash Withdrawal"
-               style="-fx-text-fill: #E0E0E0; -fx-font-size: 38px; -fx-font-weight: 900; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 5, 0.0, 0, 1);" >
+        <Label style="-fx-text-fill: #E0E0E0; -fx-font-size: 38px; -fx-font-weight: 900; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 5, 0.0, 0, 1);" text="Cash Withdrawal">
             <font>
                 <Font name="System Bold" size="38.0" />
             </font>
         </Label>
-        <Label text="Enter the account number and amount to withdraw in Pula (P)."
-               style="-fx-text-fill: #A0A0A0; -fx-font-size: 16px;">
+        <Label style="-fx-text-fill: #A0A0A0; -fx-font-size: 16px;" text="Enter the account number and amount to withdraw in Pula (P).">
         </Label>
     </VBox>
 
     <GridPane alignment="CENTER" hgap="20" vgap="25">
-        <padding><Insets top="30" right="20" bottom="30" left="20"/></padding>
+        <padding><Insets bottom="30" left="20" right="20" top="30" /></padding>
 
-        <Label text="Account Number:"
-               GridPane.columnIndex="0" GridPane.rowIndex="0"
-               style="-fx-text-fill: #C0C0C0; -fx-font-size: 16px; -fx-font-weight: bold;">
+        <Label style="-fx-text-fill: #C0C0C0; -fx-font-size: 16px; -fx-font-weight: bold;" text="Account Number:" GridPane.columnIndex="0" GridPane.rowIndex="0">
         </Label>
-        <TextField fx:id="accountNumberField" promptText="Enter account number (e.g., 1001)"
-                   GridPane.columnIndex="1" GridPane.rowIndex="0"
-                   style="-fx-background-color: #6A0520; -fx-text-fill: #E0E0E0; -fx-prompt-text-fill: #A0A0A0; -fx-border-color: #8B002B; -fx-border-width: 1; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 10;"
-                   prefWidth="250" />
+        <TextField fx:id="accountNumberField" prefWidth="250" promptText="Enter account number (e.g., 1001)" style="-fx-background-color: #6A0520; -fx-text-fill: #E0E0E0; -fx-prompt-text-fill: #A0A0A0; -fx-border-color: #8B002B; -fx-border-width: 1; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 10;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-        <Label text="Withdrawal Amount (P):"
-               GridPane.columnIndex="0" GridPane.rowIndex="1"
-               style="-fx-text-fill: #C0C0C0; -fx-font-size: 16px; -fx-font-weight: bold;">
+        <Label style="-fx-text-fill: #C0C0C0; -fx-font-size: 16px; -fx-font-weight: bold;" text="Withdrawal Amount (P):" GridPane.columnIndex="0" GridPane.rowIndex="1">
         </Label>
-        <TextField fx:id="amountField" promptText="Enter amount (e.g., 250.00)"
-                   GridPane.columnIndex="1" GridPane.rowIndex="1"
-                   style="-fx-background-color: #6A0520; -fx-text-fill: #E0E0E0; -fx-prompt-text-fill: #A0A0A0; -fx-border-color: #8B002B; -fx-border-width: 1; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 10;"
-                   prefWidth="250" />
+        <TextField fx:id="amountField" prefWidth="250" promptText="Enter amount (e.g., 250.00)" style="-fx-background-color: #6A0520; -fx-text-fill: #E0E0E0; -fx-prompt-text-fill: #A0A0A0; -fx-border-color: #8B002B; -fx-border-width: 1; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 10;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
     </GridPane>
 
     <HBox alignment="CENTER" spacing="30.0">
 
-        <Button text="Confirm Withdrawal"
-                mnemonicParsing="false"
-                onAction="#handleWithdrawAction"
-                style="-fx-background-color: #C0C0C0;
-                       -fx-text-fill: #4D0017;
-                       -fx-font-size: 16px;
-                       -fx-padding: 12 40 12 40;
-                       -fx-font-weight: bold;
-                       -fx-border-radius: 8;
-                       -fx-background-radius: 8;
-                       -fx-cursor: hand;
-                       -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 15, 0.2, 0, 4);"
-                prefWidth="220.0" />
+        <Button mnemonicParsing="false" onAction="#handleWithdrawAction" prefHeight="50.0" prefWidth="236.0" style="-fx-background-color: #C0C0C0;                        -fx-text-fill: #4D0017;                        -fx-font-size: 16px;                        -fx-padding: 12 40 12 40;                        -fx-font-weight: bold;                        -fx-border-radius: 8;                        -fx-background-radius: 8;                        -fx-cursor: hand;                        -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 15, 0.2, 0, 4);" text="Confirm Withdrawal" />
 
-        <Button text="Back to Dashboard"
-                mnemonicParsing="false"
-                onAction="#handleBackAction"
-                style="-fx-background-color: transparent;
-                       -fx-text-fill: #C0C0C0;
-                       -fx-font-size: 16px;
-                       -fx-padding: 12 40 12 40;
-                       -fx-font-weight: bold;
-                       -fx-border-color: #C0C0C0;
-                       -fx-border-width: 2;
-                       -fx-border-radius: 8;
-                       -fx-background-radius: 8;
-                       -fx-cursor: hand;"
-                prefWidth="220.0" />
+        <Button mnemonicParsing="false" onAction="#handleBackAction" prefHeight="54.0" prefWidth="232.0" style="-fx-background-color: transparent;                        -fx-text-fill: #C0C0C0;                        -fx-font-size: 16px;                        -fx-padding: 12 40 12 40;                        -fx-font-weight: bold;                        -fx-border-color: #C0C0C0;                        -fx-border-width: 2;                        -fx-border-radius: 8;                        -fx-background-radius: 8;                        -fx-cursor: hand;" text="Back to Dashboard" />
     </HBox>
 
 </VBox>

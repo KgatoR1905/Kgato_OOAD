@@ -1,5 +1,3 @@
-package com.oakridge.financial;
-
 import java.util.*;
 
 public class Bank implements BankOperations, TransactionOperations {
@@ -14,6 +12,7 @@ public class Bank implements BankOperations, TransactionOperations {
     public String getName() {
         return name;
     }
+
 
     public Account createAccount(String customerName, AccountType type, double initialDeposit) {
         int accNum = nextAccountNumber++;
@@ -74,3 +73,4 @@ public class Bank implements BankOperations, TransactionOperations {
         }
     }
 }
+
